@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Discussion - Pet Memorial Network</title>
+  <link rel="stylesheet" href="style.css" />
+  
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js"></script>
+
+  <!-- Uploadcare widget -->
+  <script src="https://ucarecdn.com/libs/widget/3.x/uploadcare.full.min.js"></script>
+</head>
+<body>
+
+  <header>
+    <h1>Pet Memorial Network</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="discussion.html" class="active">Discussion</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="discussion-section">
+      <h2>Share Your Story</h2>
+
+      <!-- Photo Submission Form -->
+      <form id="upload-form">
+        <label for="photo">Upload a Photo of Your Pet:</label><br/>
+        <input
+          type="hidden"
+          role="uploadcare-uploader"
+          name="photo"
+          data-crop="1:1"
+          data-images-only
+          data-clearable
+        />
+        <br/><br/>
+        <button type="submit">Submit Photo</button>
+      </form>
+
+      <!-- Optional: Comment Box -->
+      <div id="comment-section">
+        <h3>Leave a Comment</h3>
+        <textarea id="comment-input" placeholder="Type your message here..."></textarea><br/>
+        <button id="submit-comment">Post Comment</button>
+        <ul id="comments-list"></ul>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

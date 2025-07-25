@@ -2,20 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Pet memorial photo gallery with links to emergency and support services" />
+  <meta name="description" content="Pet loss grief support community with a memorial photo gallery, links to emergency, and support services" />
   <title id="tabtitle">Whisker Trails</title>
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <header>
+ <header>
     <nav class="rainbow-bridge-nav">
-  <ul class="nav-links">
+    <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="articles.html">Articles</a></li>
     <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="forum.html">Forum</a></li>
     <li><a href="resources.html">Resources</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
@@ -45,29 +45,32 @@
     <section>
     <h2 id="submission">Add your pet to the gallery</h2>
     <form id="petForm">
-      <label for="petName">Pet Name:</label>
-      <input type="text" id="petName" name="petName" required />
+  <label for="petName">Pet Name:</label>
+  <input type="text" id="petName" name="petName" required />
 
-      <label for="ownerEmail">Your Email:</label>
-      <input type="email" id="ownerEmail" name="ownerEmail" required />
+  <label for="ownerEmail">Your Email:</label>
+  <input type="email" id="ownerEmail" name="ownerEmail" required />
 
-      <label for="petPhoto">Pet Photo:</label>
-      <input type="file" id="petPhoto" name="petPhoto" accept="image/*" />
+  <label for="petPhoto">Pet Photo:</label>
+  <!-- Uploadcare widget input -->
+  <input 
+    type="hidden" 
+    role="uploadcare-uploader" 
+    name="petPhoto" 
+    data-public-key="78080d5029a887819c67" 
+    data-images-only 
+    required 
+  />
 
-      <img id="photoPreview" src="#" alt="Photo Preview" style="display: none; max-width: 100%; margin-top: 10px;" />
+  <label for="message">Memory / Tribute:</label>
+  <textarea id="message" name="message" required></textarea>
 
-      <label for="message">Memory / Tribute:</label>
-      <textarea id="message" name="message" required></textarea>
-
-      <button type="submit">Submit</button>
-      <p id="submissionMessage"></p>
-    </form>
+  <button type="submit">Submit</button>
+  <p id="submissionMessage"></p>
+  </form>
   </section>
 
-  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-storage-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script src="https://ucarecdn.com/libs/widget/3.x/uploadcare.full.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

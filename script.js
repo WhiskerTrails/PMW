@@ -88,3 +88,57 @@ function showNextPhoto() {
 }
 
 setInterval(showNextPhoto, 5000); // change photo every 5 seconds
+
+
+const petForm = document.getElementById('petForm');
+const submissionMessage = document.getElementById('submissionMessage');
+
+petForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const petName = petForm.petName.value.trim();
+  const ownerEmail = petForm.ownerEmail.value.trim();
+  const message = petForm.message.value.trim();
+  const fileUUID = petForm.petPhoto.value;  // Uploadcare widget puts the UUID here
+
+  if (!fileUUID) {
+    submissionMessage.style.color = 'red';
+    submissionMessage.textContent = 'Please upload a photo.';
+    return;
+  }
+
+  // Construct full image URL from UUID
+  const photoURL = `https://ucarecdn.com/${fileUUID}/`;
+
+  // For now, just show success message and log the data
+  submissionMessage.style.color = 'black';
+  submissionMessage.textContent = 'Submitting...';
+
+  console.log({
+    petName,
+    ownerEmail,
+    message,
+    photoURL
+  });
+
+  // TODO: Here you would send this data to your backend or save it somewhere
+
+  submissionMessage.style.color = 'green';
+  submissionMessage.textContent = 'Thank you! Your photo was submitted successfully.';
+
+  petForm.reset();
+});
+
+document.getElementById('upload-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  const widget = uploadcare.Widget('[role=uploadcare-uploader]');
+  const file = widget.value();
+
+  if (file) {
+    alert("Photo submitted! URL: " + file);
+    // You can also send this URL to Firebase here
+  } else {
+    alert("Please select a photo.");
+  }
+});
