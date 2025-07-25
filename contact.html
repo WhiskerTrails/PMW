@@ -46,7 +46,7 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
   const formData = new FormData(form);
   const status = document.getElementById('formStatus');
 
-  fetch('https://formsubmit.co/ajax/your@email.com', {
+  fetch('https://formsubmit.co/ajax/lagszenith@gmail.com', {
     method: 'POST',
     body: formData,
     headers: {
@@ -71,14 +71,5 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
 });
 </script>
 
-
-  <script>
-    // Example simple JS (non-backend) form handling:
-    document.getElementById("contactForm").addEventListener("submit", function(e) {
-      e.preventDefault();
-      document.getElementById("formStatus").textContent = "Thank you! Your message has been received.";
-      this.reset(); // Clears the form
-    });
-  </script>
 </body>
 </html>
