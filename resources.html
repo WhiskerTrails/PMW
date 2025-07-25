@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Resources - Pet Memorial Website</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* --- Tabs styling --- */
+    .tabs {
+      max-width: 900px;
+      margin: 30px auto 10px;
+      display: flex;
+      border-bottom: 3px solid #ff6600;
+      font-family: Arial, sans-serif;
+    }
+
+    .tab-button {
+      flex: 1;
+      padding: 12px 0;
+      cursor: pointer;
+      background: #fff;
+      border: none;
+      border-bottom: 3px solid transparent;
+      color: #ff6600;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      transition: border-color 0.3s ease;
+    }
+
+    .tab-button:hover {
+      background: #fff5e6;
+    }
+
+    .tab-button.active {
+      border-bottom-color: #ff6600;
+      color: #cc5200;
+      background: #fff5e6;
+    }
+
+    /* --- Tab content styling --- */
+    .tab-content {
+      max-width: 900px;
+      margin: 0 auto 40px;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      color: #333;
+      background: #fff;
+      border: 1px solid #ff6600;
+      border-top: none;
+      border-radius: 0 0 8px 8px;
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    /* Reuse your directory styling for lists */
+    .directory-header {
+      color: #ff6600;
+      font-size: 2rem;
+      margin-bottom: 20px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      text-align: center;
+    }
+
+    .shelter-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .shelter-item {
+      border: 1px solid #ff6600;
+      border-radius: 8px;
+      padding: 15px 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 5px rgba(255, 102, 0, 0.2);
+      transition: box-shadow 0.3s ease;
+      background: #fff;
+    }
+
+    .shelter-item:hover {
+      box-shadow: 0 6px 15px rgba(255, 102, 0, 0.4);
+    }
+
+    .shelter-name {
+      font-size: 1.3rem;
+      color: #ff6600;
+      margin-bottom: 6px;
+      font-weight: 700;
+    }
+
+    .shelter-address,
+    .shelter-phone,
+    .shelter-website {
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+
+    .shelter-website a {
+      color: #007acc;
+      text-decoration: none;
+    }
+
+    .shelter-website a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="rainbow-bridge-nav">
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="resources.html">Resources</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+  </header>
+
+ <header>
+  <div class="navbar">
+    <a href="donation-form.html" class="donate-button">Donate</a>
+  </div>
+  </header>
+
+  <main>
+
+    <div class="tabs">
+      <button class="tab-button active" data-tab="shelters">Shelters</button>
+      <button class="tab-button" data-tab="vets">Veterinarians</button>
+      <button class="tab-button" data-tab="emergency">Emergency</button>
+      <button class="tab-button" data-tab="memorials">Pet Memorial Services</button>
+      <button class="tab-button" data-tab="support">Support</button>
+      <button class="tab-button" data-tab="supplies">Supplies</button>
+
+    </div>
+
+    <!-- Shelters Tab -->
+    <section id="shelters" class="tab-content active">
+      <h2 class="directory-header">Orange County Pet Shelters</h2>
+      <ul class="shelter-list">
+        <li class="shelter-item">
+          <div class="shelter-name">Orange County Animal Care</div>
+          <div class="shelter-address">1630 Victory Rd, Tustin, CA 92782</div>
+          <div class="shelter-phone">Phone: (714) 935-6848</div>
+          <div class="shelter-website">
+            Website: <a href="https://www.ocpetinfo.com/" target="_blank" rel="noopener">ocpetinfo.com</a>
+          </div>
+        </li>
+
+        <li class="shelter-item">
+          <div class="shelter-name">Operation Kindness</div>
+          <div class="shelter-address">12862 Central Ave, Garden Grove, CA 92840</div>
+          <div class="shelter-phone">Phone: (714) 892-3647</div>
+          <div class="shelter-website">
+            Website: <a href="https://operationkindnessoc.org/" target="_blank" rel="noopener">operationkindnessoc.org</a>
+          </div>
+        </li>
+
+        <li class="shelter-item">
+          <div class="shelter-name">Second Chance Rescue</div>
+          <div class="shelter-address">Mission Viejo, CA (various locations)</div>
+          <div class="shelter-phone">Phone: (949) 292-2877</div>
+          <div class="shelter-website">
+            Website: <a href="https://secondchancerescue.org/" target="_blank" rel="noopener">secondchancerescue.org</a>
+          </div>
+        </li>
+
+        <li class="shelter-item">
+          <div class="shelter-name">OC Animal Allies</div>
+          <div class="shelter-address">San Clemente, CA</div>
+          <div class="shelter-phone">Phone: (949) 637-4657</div>
+          <div class="shelter-website">
+            Website: <a href="http://ocanimalallies.org/" target="_blank" rel="noopener">ocanimalallies.org</a>
+          </div>
+        </li>
+
+        <li class="shelter-item">
+          <div class="shelter-name">Homeward Bound Pet Adoption Center</div>
+          <div class="shelter-address">2500 S Main St, Santa Ana, CA 92707</div>
+          <div class="shelter-phone">Phone: (714) 836-7000</div>
+          <div class="shelter-website">
+            Website: <a href="https://www.ocpetinfo.com/hb/" target="_blank" rel="noopener">ocpetinfo.com/hb</a>
+          </div>
+        </li>
+
+        <li class="shelter-item">
+          <div class="shelter-name">FixNation</div>
+          <div class="shelter-address">Buena Park, CA</div>
+          <div class="shelter-phone">Phone: (562) 537-7087</div>
+          <div class="shelter-website">
+            Website: <a href="https://fixnation.org/" target="_blank" rel="noopener">fixnation.org</a>
+          </div>
+        </li>
+
+        <li class="shelter-item">
+          <div class="shelter-name">The Animal Refuge Center</div>
+          <div class="shelter-address">17102 Serrano Rd, Irvine, CA 92614</div>
+          <div class="shelter-phone">Phone: (949) 376-1642</div>
+          <div class="shelter-website">
+            Website: <a href="http://theanimalrefuge.org/" target="_blank" rel="noopener">theanimalrefuge.org</a>
+          </div>
+        </li>
+
+        <li class="shelter-item">
+          <div class="shelter-name">Animal Assistance League of Orange County</div>
+          <div class="shelter-address">Mission Viejo, CA</div>
+          <div class="shelter-phone">Phone: (949) 858-3815</div>
+          <div class="shelter-website">
+            Website: <a href="https://animalassist.org/" target="_blank" rel="noopener">animalassist.org</a>
+          </div>
+        </li>
+
+        <li class="shelter-item">
+          <div class="shelter-name">PAWSitive Match</div>
+          <div class="shelter-address">San Juan Capistrano, CA</div>
+          <div class="shelter-phone">Phone: (949) 855-4279</div>
+          <div class="shelter-website">
+            Website: <a href="https://www.pawsitivematch.org/" target="_blank" rel="noopener">pawsitivematch.org</a>
+          </div>
+        </li>
+
+        <li class="shelter-item">
+          <div class="shelter-name">Be The Starfish Foundation</div>
+          <div class="shelter-address">Costa Mesa, CA</div>
+          <div class="shelter-phone">Phone: (714) 324-2381</div>
+          <div class="shelter-website">
+            Website: <a href="https://betherstarfish.org/" target="_blank" rel="noopener">betherstarfish.org</a>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Veterinarians Tab -->
+    <section id="vets" class="tab-content">
+      <h2 class="directory-header">Veterinary Clinics in Orange County</h2>
+      <ul class="shelter-list">
+        <li class="shelter-item">
+          <div class="shelter-name">Orange County Veterinary Hospital</div>
+          <div class="shelter-address">123 Pet St, Irvine, CA 92604</div>
+          <div class="shelter-phone">Phone: (949) 555-1234</div>
+          <div class="shelter-website">
+            Website: <a href="https://ocvet.com" target="_blank" rel="noopener">ocvet.com</a>
+          </div>
+        </li>
+        <li class="shelter-item">
+          <div class="shelter-name">Irvine Veterinary Hospital</div>
+          <div class="shelter-address">16180 Sand Canyon Ave, Irvine, CA 92618</div>
+          <div class="shelter-phone">Phone: (949) 753-1044</div>
+          <div class="shelter-website">
+            Website: <a href="https://www.irvinevethospital.com/" target="_blank" rel="noopener">irvinevethospital.com</a>
+          </div>
+        </li>
+        <li class="shelter-item">
+          <div class="shelter-name">Newport Beach Animal Hospital</div>
+          <div class="shelter-address">2040 San Joaquin Hills Rd, Newport Beach, CA 92660</div>
+          <div class="shelter-phone">Phone: (949) 760-8664</div>
+          <div class="shelter-website">
+            Website: <a href="https://www.newportbeachanimalhospital.com/" target="_blank" rel="noopener">newportbeachanimalhospital.com</a>
+          </div>
+        </li>
+        <li class="shelter-item">
+          <div class="shelter-name">Mission Veterinary Hospital</div>
+          <div class="shelter-address">27402 Camino Capistrano, Mission Viejo, CA 92691</div>
+          <div class="shelter-phone">Phone: (949) 586-8100</div>
+          <div class="shelter-website">
+            Website: <a href="https://www.missionvethospital.com/" target="_blank" rel="noopener">missionvethospital.com</a>
+	  </div> </li> </ul> </section>
+<!-- Emergency Tab -->
+<section id="emergency" class="tab-content">
+  <h2 class="directory-header">24/7 Emergency Pet Hospitals</h2>
+  <ul class="shelter-list">
+    <li class="shelter-item">
+      <div class="shelter-name">VCA West Coast Specialty and Emergency Animal Hospital</div>
+      <div class="shelter-address">18300 Euclid St, Fountain Valley, CA 92708</div>
+      <div class="shelter-phone">Phone: (714) 963-0909</div>
+      <div class="shelter-website">
+        Website: <a href="https://vcahospitals.com/west-coast" target="_blank" rel="noopener">vcahospitals.com/west-coast</a>
+      </div>
+    </li>
+    <li class="shelter-item">
+      <div class="shelter-name">Southern California Veterinary Specialty Hospital</div>
+      <div class="shelter-address">1371 Reynolds Ave, Irvine, CA 92614</div>
+      <div class="shelter-phone">Phone: (949) 833-9020</div>
+      <div class="shelter-website">
+        Website: <a href="https://www.scvsh.com/" target="_blank" rel="noopener">scvsh.com</a>
+      </div>
+    </li>
+  </ul>
+</section>
+
+<!-- Support Tab -->
+<section id="support" class="tab-content">
+  <h2 class="directory-header">Pet Loss & Grief Support</h2>
+  <ul class="shelter-list">
+    <li class="shelter-item">
+      <div class="shelter-name">Rainbow Bridge Pet Loss Support</div>
+      <div class="shelter-address">Online / Remote</div>
+      <div class="shelter-phone">Support: Available 24/7</div>
+      <div class="shelter-website">
+        Website: <a href="https://rainbowsbridge.com/" target="_blank" rel="noopener">rainbowsbridge.com</a>
+      </div>
+    </li>
+    <li class="shelter-item">
+      <div class="shelter-name">OCSPCA Pet Grief Counseling</div>
+      <div class="shelter-address">OC Humane Society, Huntington Beach, CA</div>
+      <div class="shelter-phone">Phone: (714) 964-4445</div>
+      <div class="shelter-website">
+        Website: <a href="https://www.orangecountyspca.org/" target="_blank" rel="noopener">orangecountyspca.org</a>
+      </div>
+    </li>
+  </ul>
+</section>
+
+<!-- Supplies Tab -->
+<section id="supplies" class="tab-content">
+  <h2 class="directory-header">Pet Supplies & Services</h2>
+  <ul class="shelter-list">
+    <li class="shelter-item">
+      <div class="shelter-name">PetSmart - Costa Mesa</div>
+      <div class="shelter-address">620 W 17th St, Costa Mesa, CA 92627</div>
+      <div class="shelter-phone">Phone: (949) 515-9693</div>
+      <div class="shelter-website">
+        Website: <a href="https://www.petsmart.com/" target="_blank" rel="noopener">petsmart.com</a></div>
+    </li>
+    <li class="shelter-item">
+      <div class="shelter-name">Petco - Anaheim Hills</div>
+      <div class="shelter-address">8075 E Santa Ana Canyon Rd, Anaheim, CA 92808</div>
+      <div class="shelter-phone">Phone: (714) 998-2700</div>
+      <div class="shelter-website">
+        Website: <a href="https://www.petco.com/" target="_blank" rel="noopener">petco.com</a>
+<li class="shelter-item">
+  <div class="shelter-name">PetSmart - Costa Mesa</div>
+  <div class="shelter-address">620 W 17th St, Costa Mesa, CA 92627</div>
+  <div class="shelter-phone">Phone: (949) 764-9277</div>
+  <div class="shelter-website">
+    Website: <a href="https://www.petsmart.com/stores/us/ca/costa-mesa-store1161.html" target="_blank" rel="noopener">petsmart.com</a>
+  </div>
+</li>
+
+<li class="shelter-item">
+  <div class="shelter-name">PetSmart - Orange</div>
+  <div class="shelter-address">1500 E Village Way, Orange, CA 92865</div>
+  <div class="shelter-phone">Phone: (714) 923-4037</div>
+  <div class="shelter-website">
+    Website: <a href="https://www.petsmart.com/stores/us/ca/orange-store2493.html" target="_blank" rel="noopener">petsmart.com</a>
+  </div>
+</li>
+
+<li class="shelter-item">
+  <div class="shelter-name">Petco - Costa Mesa</div>
+  <div class="shelter-address">1815 Newport Blvd, Ste B, Costa Mesa, CA 92627</div>
+  <div class="shelter-phone">Phone: (949) 722-6316</div>
+  <div class="shelter-website">
+    Website: <a href="https://stores.petco.com/ca/costamesa/pet-supplies-costamesa-ca-922.html" target="_blank" rel="noopener">petco.com</a>
+  </div>
+</li>
+
+<li class="shelter-item">
+  <div class="shelter-name">Petco - Orange</div>
+  <div class="shelter-address">1824 E Katella Ave, Orange, CA 92867</div>
+  <div class="shelter-phone">Phone: (714) 289-1400</div>
+  <div class="shelter-website">
+    Website: <a href="https://stores.petco.com/ca/orange/pet-supplies-orange-ca-935.html" target="_blank" rel="noopener">petco.com</a>
+  </div>
+</li>
+
+<li class="shelter-item">
+  <div class="shelter-name">Pet Supply Warehouse</div>
+  <div class="shelter-address">Mission Viejo, CA (multiple locations)</div>
+  <div class="shelter-phone">Phone: (949) 837-7297</div>
+  <div class="shelter-website">
+    Website: <a href="https://pswpetsmv.com/" target="_blank" rel="noopener">pswpetsmv.com</a>
+  </div>
+</li>
+
+<li class="shelter-item">
+  <div class="shelter-name">Centinela Feed &amp; Pet Supplies</div>
+  <div class="shelter-address">620 W 17th St, Costa Mesa, CA 92627</div>
+  <div class="shelter-phone">Phone: (949) 764-9277</div>
+  <div class="shelter-website">
+    Website: <a href="https://www.centinelafeed.com/" target="_blank" rel="noopener">centinelafeed.com</a>
+  </div>
+</li>
+
+<li class="shelter-item">
+  <div class="shelter-name">Anaheim Feed &amp; Pet Supply</div>
+  <div class="shelter-address">1730 Lemon St, Anaheim, CA 92801</div>
+  <div class="shelter-phone">Phone: (714) 999-9999</div>
+  <div class="shelter-website">
+    Website: <a href="https://anaheimfeed.com/" target="_blank" rel="noopener">anaheimfeed.com</a>
+  </div>
+</li>
+
+<li class="shelter-item">
+  <div class="shelter-name">Healthy Spot</div>
+  <div class="shelter-address">Costa Mesa, CA</div>
+  <div class="shelter-phone">Phone: (949) 555-1234</div>
+  <div class="shelter-website">
+    Website: <a href="https://www.healthyspot.com/" target="_blank" rel="noopener">healthyspot.com</a>
+  </div>
+</li>
+
+<li class="shelter-item">
+  <div class="shelter-name">My Pet Market</div>
+  <div class="shelter-address">Next to Whole Foods, Irvine, CA</div>
+  <div class="shelter-phone">Phone: (949) 555-5678</div>
+  <div class="shelter-website">
+    Website: <a href="#" target="_blank" rel="noopener">mypetmarket.com</a>
+  </div>
+</li>
+
+<li class="shelter-item">
+  <div class="shelter-name">Kriser’s Natural Pet</div>
+  <div class="shelter-address">Irvine, CA</div>
+  <div class="shelter-phone">Phone: (949) 555-8765</div>
+  <div class="shelter-website">
+    Website: <a href="https://krisersnaturally.com/" target="_blank" rel="noopener">krisersnaturally.com</a>
+  </div>
+</li>
+
+<li class="shelter-item">
+  <div class="shelter-name">Sandbar Pet Shop</div>
+  <div class="shelter-address">Mission Viejo, CA</div>
+  <div class="shelter-phone">Phone: (949) 555-2345</div>
+  <div class="shelter-website">
+    Website: <a href="#" target="_blank" rel="noopener">—</a>
+  </div>
+</li>
+
+      </div>
+    </li>
+  </ul>
+</section>
+
+<!-- Pet Memorial Services Tab -->
+<section id="memorials" class="tab-content">
+  <h2 class="directory-header">Pet Memorial Services in Southern California</h2>
+  <ul class="shelter-list">
+    <li class="shelter-item">
+      <div class="shelter-name">Garden of Angels Pet Memorial</div>
+      <div class="shelter-address">Los Angeles, CA</div>
+      <div class="shelter-phone">Phone: (818) 352-5555</div>
+      <div class="shelter-website">
+        Website: <a href="https://gardenofangels.com/" target="_blank" rel="noopener">gardenofangels.com</a>
+      </div>
+    </li>
+    <li class="shelter-item">
+      <div class="shelter-name">Forever Pets Cremation Services</div>
+      <div class="shelter-address">Orange County, CA</div>
+      <div class="shelter-phone">Phone: (888) 960-7387</div>
+      <div class="shelter-website">
+        Website: <a href="https://foreverpets.com/" target="_blank" rel="noopener">foreverpets.com</a>
+      </div>
+    </li>
+    <li class="shelter-item">
+      <div class="shelter-name">Peaceful Paws Pet Cremation</div>
+      <div class="shelter-address">San Diego, CA</div>
+      <div class="shelter-phone">Phone: (858) 200-0579</div>
+      <div class="shelter-website">
+        Website: <a href="https://peacefulpawspetcremation.com/" target="_blank" rel="noopener">peacefulpawspetcremation.com</a>
+      </div>
+    </li>
+    <li class="shelter-item">
+      <div class="shelter-name">Heavenly Paws Pet Cremation</div>
+      <div class="shelter-address">Orange County, CA</div>
+      <div class="shelter-phone">Phone: (949) 206-6999</div>
+      <div class="shelter-website">
+        Website: <a href="https://heavenlypawspetcremation.com/" target="_blank" rel="noopener">heavenlypawspetcremation.com</a>
+      </div>
+    </li>
+    <li class="shelter-item">
+      <div class="shelter-name">Peaceful Animal Cremation Services</div>
+      <div class="shelter-address">Los Angeles, CA</div>
+      <div class="shelter-phone">Phone: (800) 779-2373</div>
+      <div class="shelter-website">
+        Website: <a href="https://peacefulanimalcremation.com/" target="_blank" rel="noopener">peacefulanimalcremation.com</a>
+      </div>
+    </li>
+  </ul>
+</section>
+
+</main> 
+<script> const buttons = document.querySelectorAll(".tab-button"); const contents = document.querySelectorAll(".tab-content"); buttons.forEach((button) => { button.addEventListener("click", () => { buttons.forEach((btn) => btn.classList.remove("active")); contents.forEach((content) => content.classList.remove("active")); button.classList.add("active"); document.getElementById(button.dataset.tab).classList.add("active"); }); }); </script> 
+</body> 
+</html>

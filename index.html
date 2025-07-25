@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Pet memorial photo gallery with links to emergency and support services" />
+  <title id="tabtitle">PMW</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <nav class="rainbow-bridge-nav">
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="resources.html">Resources</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  </nav>
+  </header>
+
+  <h1 id="welcome" style="text-align: center;">Welcome to PMW</h1>
+  <p>A pet support network</p>
+
+  <div class="intro-container">
+    <p>We are a compassionate community dedicated to supporting those who have experienced the heartbreak of losing a beloved pet. Here, you can share memories by uploading photos and heartfelt stories to our memorial gallery, honoring the special place your pet holds in your heart. Our resource section offers trusted links to veterinarians, memorial services, and helpful organizations, while our curated articles provide guidance on coping with grief and nurturing mental health. You are not alone on this journey — we’re here to help you find comfort, connection, and healing.
+    </p>
+  </div>
+
+  <div style="text-align: center;">
+  <iframe 
+    width="560" 
+    height="315" 
+    src="https://www.youtube.com/embed/g1EC2p5iHaw?si=QtWIgjl7H5BoWlRu" 
+    title="YouTube video player" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
+  ></iframe>
+  </div>
+
+    <section>
+    <h2 id="submission">Add your pet to the gallery</h2>
+    <form id="petForm">
+      <label for="petName">Pet Name:</label>
+      <input type="text" id="petName" name="petName" required />
+
+      <label for="ownerEmail">Your Email:</label>
+      <input type="email" id="ownerEmail" name="ownerEmail" required />
+
+      <label for="petPhoto">Pet Photo:</label>
+      <input type="file" id="petPhoto" name="petPhoto" accept="image/*" />
+
+      <img id="photoPreview" src="#" alt="Photo Preview" style="display: none; max-width: 100%; margin-top: 10px;" />
+
+      <label for="message">Memory / Tribute:</label>
+      <textarea id="message" name="message" required></textarea>
+
+      <button type="submit">Submit</button>
+      <p id="submissionMessage"></p>
+    </form>
+  </section>
+
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-storage-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

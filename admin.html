@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin Approval Panel</title>
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-storage-compat.js"></script>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .submission { border: 1px solid #ccc; padding: 15px; margin-bottom: 20px; border-radius: 8px; }
+    img { max-width: 150px; display: block; margin-bottom: 10px; }
+    button { margin-right: 10px; padding: 8px 12px; cursor: pointer; }
+    #loginForm { max-width: 300px; }
+  </style>
+</head>
+<body>
+
+  <h1>Admin Approval Panel</h1>
+
+  <!-- Login Form -->
+  <div id="loginDiv">
+    <h2>Login</h2>
+    <form id="loginForm">
+      <input type="email" id="email" placeholder="Email" required /><br /><br />
+      <input type="password" id="password" placeholder="Password" required /><br /><br />
+      <button type="submit">Login</button>
+    </form>
+    <p id="loginMessage" style="color: red;"></p>
+  </div>
+
+  <!-- Approval List -->
+  <div id="approvalList" style="display:none;">
+    <button id="logoutBtn">Logout</button>
+    <h2>Pending Submissions</h2>
+    <div id="submissionsContainer"></div>
+  </div>
+
+  <script>
+    // Firebase config (replace with your actual config)
+    const firebaseConfig = {
+      apiKey: "YOUR_API_KEY",
+      authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+      projectId: "YOUR_PROJECT_ID",
+      storageBucket: "YOUR_PROJECT_ID.appspot.com",
+      messagingSenderId: "SENDER_ID",
+      appId: "APP_ID"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+
+    const loginDiv = document.getElementById('loginDiv');
+    const approvalList = document.getElementById('approvalList');
+    const submissionsContainer = document.getElementById('submissionsContainer');
+    const loginForm = document.getElementById('loginForm');
+    const loginMessage = document.getElementById('loginMessage');
+    const logoutBtn = document.getElementById('logoutBtn');
+
+    // Login form submit handler
+    loginForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      loginMessage.textContent = '';
+
+      auth.signInWithEmailAndPassword(email, password)
+        .then(() => {
+          loginDiv.style.display = 'none';
+          approvalList.style.display = 'block';
+          loadSubmissions();
+        })
+        .catch(err => {
+          loginMessage.textContent = err.message;
+        });
+    });
+
+    // Logout button
+    logoutBtn.addEventListener('click', () => {
+      auth.signOut().then(() => {
+        approvalList.style.display = 'none';
+        loginDiv.style.display = 'block';
+        submissionsContainer.innerHTML = '';
+      });
+    });
+
+    // Check auth state on page load
+    auth.onAuthStateChanged(user => {
+      if (user) {
+        loginDiv.style.display = 'none';
+        approvalList.style.display = 'block';
+        loadSubmissions();
+      } else {
+        loginDiv.style.display = 'block';
+        approvalList.style.display = 'none';
+      }
+    });
+
+    // Load submissions where approved == false
+    function loadSubmissions() {
+      submissionsContainer.innerHTML = 'Loading...';
+      db.collection('petSubmissions')
+        .where('approved', '==', false)
+        .orderBy('submittedAt', 'desc')
+        .onSnapshot(snapshot => {
+          submissionsContainer.innerHTML = '';
+          if (snapshot.empty) {
+            submissionsContainer.innerHTML = '<p>No pending submissions.</p>';
+            return;
+          }
+          snapshot.forEach(doc => {
+            const data = doc.data();
+            const div = document.createElement('div');
+            div.className = 'submission';
+
+            div.innerHTML = `
+              <img src="${data.photoURL}" alt="Pet Photo" />
+              <strong>Pet Name:</strong> ${data.petName} <br />
+              <strong>Owner Email:</strong> ${data.ownerEmail} <br />
+              <strong>Message:</strong> ${data.message} <br />
+              <button data-id="${doc.id}" class="approveBtn">Approve</button>
+              <button data-id="${doc.id}" class="rejectBtn">Reject</button>
+            `;
+
+            submissionsContainer.appendChild(div);
+          });
+
+          // Attach event listeners after elements created
+          document.querySelectorAll('.approveBtn').forEach(button => {
+            button.addEventListener('click', () => {
+              const id = button.getAttribute('data-id');
+              approveSubmission(id);
+            });
+          });
+
+          document.querySelectorAll('.rejectBtn').forEach(button => {
+            button.addEventListener('click', () => {
+              const id = button.getAttribute('data-id');
+              rejectSubmission(id);
+            });
+          });
+        }, err => {
+          submissionsContainer.innerHTML = `<p>Error loading submissions: ${err.message}</p>`;
+        });
+    }
+
+    // Approve submission (set approved=true)
+    function approveSubmission(id) {
+      db.collection('petSubmissions').doc(id).update({
+        approved: true
+      }).then(() => {
+        alert('Submission approved!');
+      }).catch(err => {
+        alert('Error approving submission: ' + err.message);
+      });
+    }
+
+    // Reject submission (delete document)
+    function rejectSubmission(id) {
+      if (!confirm('Are you sure you want to reject/delete this submission?')) return;
+      db.collection('petSubmissions').doc(id).delete()
+        .then(() => {
+          alert('Submission rejected and deleted.');
+        })
+        .catch(err => {
+          alert('Error deleting submission: ' + err.message);
+        });
+    }
+  </script>
+
+</body>
+</html>

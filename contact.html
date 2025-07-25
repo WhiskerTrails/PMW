@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contact - Pet Memorial Website</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <nav class="rainbow-bridge-nav">
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="resources.html">Resources</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+  </header>
+
+ <header>
+  <div class="navbar">
+    <a href="donation-form.html" class="donate-button">Donate</a>
+  </div>
+  </header>
+
+  <main>
+    <h1 style="text-align: center;">Contact Us</h1>
+    <p>If you have questions or would like to get in touch, use the form below:</p>
+
+    <form action="https://formsubmit.co/lagszenith@gmail.com" method="POST">
+
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Your Email:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="subject">Subject:</label>
+      <input type="text" id="subject" name="subject" required />
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit">Send Message</button>
+      <p id="formStatus"></p>
+    </form>
+  </main>
+
+  <script>
+    // Example simple JS (non-backend) form handling:
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      document.getElementById("formStatus").textContent = "Thank you! Your message has been received.";
+      this.reset(); // Clears the form
+    });
+  </script>
+</body>
+</html>
