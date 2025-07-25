@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Articles</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      padding: 20px;
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #222;
+    }
+
+    .articles-container {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .article-card {
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: box-shadow 0.3s ease;
+    }
+
+    .article-card:hover {
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    }
+
+    .article-image {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .article-content {
+      padding: 15px;
+    }
+
+    .article-title {
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin: 0 0 10px;
+      color: #007acc;
+      text-decoration: none;
+      display: block;
+    }
+
+    .article-title:hover {
+      text-decoration: underline;
+    }
+  </style>
+
+</head>
+<body>
+
+  <header>
+    <nav class="rainbow-bridge-nav">
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="articles.html">Articles</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="resources.html">Resources</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  </nav>
+  </header>
+
+  <h1>Pet Grief & Support Articles</h1>
+
+  <div class="articles-container">
+    <article class="article-card">
+      <a href="https://www.example.com/article1" target="_blank" rel="noopener noreferrer">
+        <img src="images/article1.jpg" alt="Comforting after pet loss" class="article-image" />
+        <h2 class="article-title">How to Cope with the Loss of a Beloved Pet</h2>
+      </a>
+    </article>
+
+    <article class="article-card">
+      <a href="https://www.example.com/article2" target="_blank" rel="noopener noreferrer">
+        <img src="images/article2.jpg" alt="Support group meeting" class="article-image" />
+        <h2 class="article-title">Finding Support: Pet Grief Groups Near You</h2>
+      </a>
+    </article>
+
+    <article class="article-card">
+      <a href="https://www.example.com/article3" target="_blank" rel="noopener noreferrer">
+        <img src="images/article3.jpg" alt="Memorial ideas" class="article-image" />
+        <h2 class="article-title">Memorializing Your Pet: Creative Ideas to Heal</h2>
+      </a>
+    </article>
+
+    <!-- Add more articles similarly -->
+  </div>
+
+</body>
+</html>
