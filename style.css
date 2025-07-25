@@ -242,3 +242,41 @@ form button:hover {
   color: #333;            /* dark but soft text color */
 }
 
+/* Container holds the cards in a grid */
+.articles-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Each article card */
+.article-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.2s;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.article-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Article image */
+.article-image {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Article title */
+.article-title {
+  font-size: 1.1em;
+  padding: 15px;
+  margin: 0;
+  color: #333;
+  text-decoration: none;
+}

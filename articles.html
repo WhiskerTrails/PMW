@@ -4,105 +4,95 @@
   <meta charset="UTF-8" />
   <title>Articles</title>
   <link rel="stylesheet" href="style.css" />
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      padding: 20px;
-      color: #333;
-    }
-
-    h1 {
-      text-align: center;
-      margin-bottom: 30px;
-      color: #222;
-    }
-
-    .articles-container {
-      max-width: 900px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-    }
-
-    .article-card {
-      background: white;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      transition: box-shadow 0.3s ease;
-    }
-
-    .article-card:hover {
-      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-    }
-
-    .article-image {
-      width: 100%;
-      height: 160px;
-      object-fit: cover;
-      display: block;
-    }
-
-    .article-content {
-      padding: 15px;
-    }
-
-    .article-title {
-      font-size: 1.1rem;
-      font-weight: bold;
-      margin: 0 0 10px;
-      color: #007acc;
-      text-decoration: none;
-      display: block;
-    }
-
-    .article-title:hover {
-      text-decoration: underline;
-    }
-  </style>
-
 </head>
 <body>
 
   <header>
     <nav class="rainbow-bridge-nav">
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="articles.html">Articles</a></li>
-    <li><a href="gallery.html">Gallery</a></li>
-    <li><a href="resources.html">Resources</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-  </nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="articles.html">Articles</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <h1>Pet Grief & Support Articles</h1>
+  <h1 id="welcome" style="text-align: center;">Pet Grief & Support Articles</h1>
 
   <div class="articles-container">
     <article class="article-card">
-      <a href="https://www.example.com/article1" target="_blank" rel="noopener noreferrer">
-        <img src="images/article1.jpg" alt="Comforting after pet loss" class="article-image" />
-        <h2 class="article-title">How to Cope with the Loss of a Beloved Pet</h2>
+     <a href="https://www.avma.org/resources-tools/pet-owners/petcare/coping-loss-pet" target="_blank" rel="noopener noreferrer">
+    <img src="https://www.avma.org/sites/default/files/inline-images/basic/pet-loss-banner-2880x900-0127-2022.webp" alt="Coping with the loss of a pet – AVMA" class="article-image" />
+    <h2 class="article-title">Coping with the Loss of a Pet – AVMA</h2>
+      </a>
+    </article>
+
+
+    <article class="article-card">
+      <a href="https://www.humanesociety.org/resources/coping-death-your-pet" target="_blank" rel="noopener noreferrer">
+        <img src="https://images.unsplash.com/photo-1560807707-8cc77767d783?auto=format&fit=crop&w=800&q=80" alt="Coping with pet death" class="article-image" />
+        <h2 class="article-title">Coping with the Death of Your Pet – Humane Society</h2>
       </a>
     </article>
 
     <article class="article-card">
-      <a href="https://www.example.com/article2" target="_blank" rel="noopener noreferrer">
-        <img src="images/article2.jpg" alt="Support group meeting" class="article-image" />
-        <h2 class="article-title">Finding Support: Pet Grief Groups Near You</h2>
+      <a href="https://www.aspca.org/pet-care/pet-loss" target="_blank" rel="noopener noreferrer">
+        <img src="https://images.unsplash.com/photo-1535930749574-1399327ce78f?auto=format&fit=crop&w=800&q=80" alt="Pet memorial" class="article-image" />
+        <h2 class="article-title">ASPCA Guide: What to Do When a Pet Dies</h2>
       </a>
     </article>
 
     <article class="article-card">
-      <a href="https://www.example.com/article3" target="_blank" rel="noopener noreferrer">
-        <img src="images/article3.jpg" alt="Memorial ideas" class="article-image" />
-        <h2 class="article-title">Memorializing Your Pet: Creative Ideas to Heal</h2>
+      <a href="https://www.psychologytoday.com/us/blog/the-new-grief/202112/when-you-grieve-the-loss-your-pet" target="_blank" rel="noopener noreferrer">
+        <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=800&q=80" alt="Dog and owner hugging" class="article-image" />
+        <h2 class="article-title">Grieving the Loss of Your Pet – Psychology Today</h2>
       </a>
     </article>
 
-    <!-- Add more articles similarly -->
+    <article class="article-card">
+      <a href="https://www.avma.org/news/when-death-comes-suddenly-pet" target="_blank" rel="noopener noreferrer">
+    <img src="https://www.avma.org/sites/default/files/inline-images/basic/260-6-feature-01b_0.webp" alt="When death comes suddenly to a pet – AVMA News" class="article-image" />
+    <h2 class="article-title">When Death Comes Suddenly to a Pet – AVMA News</h2>
+      </a>
+    </article>
+
+<article class="article-card">
+  <a href="https://www.apnews.com/article/e4c8c6702cea69136429397af91823dd" target="_blank" rel="noopener noreferrer">
+    <img src="https://cdn.britannica.com/69/234469-050-B883797B/Rottweiler-dog.jpg" alt="AP News article image" class="article-image" />
+    <h2 class="article-title">How to Navigate the End of Your Pet's Life – AP News</h2>
+  </a>
+</article>
+
+<article class="article-card">
+  <a href="https://www.akc.org/expert-advice/health/how-to-overcome-pet-loss-through-social-media/" target="_blank" rel="noopener noreferrer">
+    <img src="https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2021/11/11105444/Golden-Retriever-laying-down-snuggling-in-the-grass-with-a-young-woman.jpeg" alt="Using social media to cope with pet loss – AKC" class="article-image" />
+    <h2 class="article-title">How to Overcome Pet Loss With Social Support – AKC</h2>
+  </a>
+</article>
+
+<article class="article-card">
+  <a href="https://www.theguardian.com/lifeandstyle/article/2024/aug/15/the-surprising-shame-of-pet-loss-you-are-supposed-to-think-humans-are-more-important-than-animals" target="_blank" rel="noopener noreferrer">
+    <img src="https://i.guim.co.uk/img/media/0577e07e8b0e0e9ce4df3f75a682851f4ac8cf6f/0_519_8656_5194/master/8656.jpg?width=1900&dpr=2&s=none&crop=none" alt="Discussion of societal shame around pet grief – The Guardian" class="article-image" />
+    <h2 class="article-title">The Surprising Shame of Pet Loss – The Guardian</h2>
+  </a>
+</article>
+
+<article class="article-card">
+  <a href="https://www.animalhealthfoundation.org/blog/category/pet-loss-and-bereavement/" target="_blank" rel="noopener noreferrer">
+    <img src="https://s28489.pcdn.co/wp-content/uploads/2022/09/IMG_2480-225x300.jpg" alt="Emotional burden of caring for a sick pet – Animal Health Foundation" class="article-image" />
+    <h2 class="article-title">The Emotional Burden of Caring for a Sick Pet – Animal Health Foundation</h2>
+  </a>
+</article>
+
+<article class="article-card">
+  <a href="https://www.psychologytoday.com/us/blog/being-human/202410/why-mourning-a-pet-can-be-as-hard-as-grieving-for-a-person" target="_blank" rel="noopener noreferrer">
+    <img src="https://cdn2.psychologytoday.com/assets/styles/article_inline_half_caption/public/field_blog_entry_images/2024-10/submission_16052_8241_coverImage_en_US.jpg?itok=RyA1cLwW" alt="The Unique Pain of Grieving for a Pet" class="article-image" />
+    <h2 class="article-title">The Unique Pain of Grieving for a Pet – Psychology Today</h2>
+  </a>
+</article>
+
   </div>
 
 </body>
