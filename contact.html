@@ -22,24 +22,55 @@
     <h1 style="text-align: center;">Contact Us</h1>
     <p>If you have questions or would like to get in touch, use the form below:</p>
 
-    <form action="https://formsubmit.co/lagszenith@gmail.com" method="POST">
+  <form id="contactForm">
+  <label for="name">Your Name:</label>
+  <input type="text" name="name" required>
 
-      <label for="name">Your Name:</label>
-      <input type="text" id="name" name="name" required />
+  <label for="email">Your Email:</label>
+  <input type="email" name="email" required>
 
-      <label for="email">Your Email:</label>
-      <input type="email" id="email" name="email" required />
+  <label for="message">Message:</label>
+  <textarea name="message" rows="6" required></textarea>
 
-      <label for="subject">Subject:</label>
-      <input type="text" id="subject" name="subject" required />
+  <button type="submit">Send Message</button>
+  <p id="formStatus" style="margin-top: 15px; display: none;"></p>
+</form>
 
-      <label for="message">Message:</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
-
-      <button type="submit">Send Message</button>
-      <p id="formStatus"></p>
-    </form>
   </main>
+
+<script>
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const form = e.target;
+  const formData = new FormData(form);
+  const status = document.getElementById('formStatus');
+
+  fetch('https://formsubmit.co/ajax/your@email.com', {
+    method: 'POST',
+    body: formData,
+    headers: {
+      'Accept': 'application/json'
+    }
+  })
+  .then(response => {
+    if (response.ok) {
+      form.reset();
+      status.textContent = "✅ Message sent successfully!";
+      status.style.color = "green";
+      status.style.display = "block";
+    } else {
+      throw new Error('Form submission failed.');
+    }
+  })
+  .catch(error => {
+    status.textContent = "❌ Oops! There was a problem.";
+    status.style.color = "red";
+    status.style.display = "block";
+  });
+});
+</script>
+
 
   <script>
     // Example simple JS (non-backend) form handling:
