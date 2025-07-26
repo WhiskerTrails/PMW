@@ -8,8 +8,8 @@
 </head>
 <body>
  
-  s<header>
-    <nav class="rainbow-bridge-nav">
+<header>
+  <nav class="rainbow-bridge-nav">
     <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="articles.html">Articles</a></li>
@@ -19,27 +19,29 @@
     <li><a href="contact.html">Contact</a></li>
   </ul>
   </nav>
-  </header>
+</header>
 
-  <main>
-    <h1 style="text-align: center;">Contact Us</h1>
-    <p>If you have questions or would like to get in touch, use the form below:</p>
+<div class="welcome-box">
+<main>
+  <h1 style="text-align: center;">Contact Us</h1>
+  <p class="subtitle">If you have questions or would like to get in touch, use the form below:</p>
+</div>
 
   <form id="contactForm">
-  <label for="name">Your Name:</label>
-  <input type="text" name="name" required>
+    <label for="name">Your Name:</label>
+    <input type="text" name="name" required>
 
-  <label for="email">Your Email:</label>
-  <input type="email" name="email" required>
+    <label for="email">Your Email:</label>
+    <input type="email" name="email" required>
 
-  <label for="message">Message:</label>
-  <textarea name="message" rows="6" required></textarea>
+    <label for="message">Message:</label>
+    <textarea name="message" rows="6" required></textarea>
 
-  <button type="submit">Send Message</button>
+    <button type="submit">Send Message</button>
   <p id="formStatus" style="margin-top: 15px; display: none;"></p>
-</form>
+  </form>
 
-  </main>
+</main>
 
 <script>
 document.getElementById('contactForm').addEventListener('submit', function(e) {

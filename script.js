@@ -142,3 +142,39 @@ document.getElementById('upload-form').addEventListener('submit', function (e) {
     alert("Please select a photo.");
   }
 });
+
+<form id="photoForm">
+  <input type="file" id="photoInput" accept="image/*" required>
+  <textarea id="photoDescription" placeholder="Enter description" required></textarea>
+  <button type="submit">Submit</button>
+</form>
+
+<script>
+document.getElementById("photoForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const fileInput = document.getElementById("photoInput");
+  const descInput = document.getElementById("photoDescription");
+
+  const file = fileInput.files[0];
+  const reader = new FileReader();
+
+  reader.onload = function () {
+    const photoData = reader.result; // Base64 image string
+    const description = descInput.value;
+
+    const submission = { photoData, description };
+
+    // Store in localStorage
+    localStorage.setItem("latestSubmission", JSON.stringify(submission));
+
+    // Redirect to gallery page
+    window.location.href = "gallery.html";
+  };
+
+  if (file) {
+    reader.readAsDataURL(file);
+  }
+});
+</script>
+

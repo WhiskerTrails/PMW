@@ -9,8 +9,8 @@
 </head>
 <body>
 
-   <header>
-    <nav class="rainbow-bridge-nav">
+<header>
+  <nav class="rainbow-bridge-nav">
     <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="articles.html">Articles</a></li>
@@ -20,42 +20,40 @@
     <li><a href="contact.html">Contact</a></li>
   </ul>
   </nav>
-  </header>
+</header>
 
-  <h1 style="text-align: center;">COMING SOON</h1>
+<div class="welcome-box">
+  <h1>COMING SOON</h1>
+</div>
 
-  <div class="banner-gallery">
-    <img src="https://www.hamiltonhumane.com/wp-content/uploads/2025/05/Joe-2025.jpg" class="gallery-photo active" alt="Photo 1" />
-    <img src="https://vetmed.tamu.edu/news/wp-content/uploads/sites/9/2023/10/AdobeStock_542062433-1024x768.jpeg" class="gallery-photo" alt="Photo 2" />
-    <img src="https://images.theconversation.com/files/651621/original/file-20250226-32-jxjhmy.jpg?ixlib=rb-4.1.0&rect=0%2C0%2C5991%2C3997&q=20&auto=format&w=320&fit=clip&dpr=2&usm=12&cs=strip" class="gallery-photo" alt="Photo 3" />
-    <img src="https://www.aaha.org/wp-content/uploads/2024/09/kitten-lying-in-blanket.jpg" class="gallery-photo" alt="Photo 4" />
-    <img src="https://wpcdn.web.wsu.edu/news/uploads/sites/2797/2025/03/cat2-1024x676.jpg" class="gallery-photo" alt="Photo 5" />
-    <img src="https://ontariospca.ca/wp-content/uploads/2023/02/IMG_3694-scaled-e1747141434405.jpg" class="gallery-photo" alt="Photo 6" />
-    <img src="https://images.ctfassets.net/cnu0m8re1exe/7mDmSG83GU3f3aDETac5Fo/db0bed89e9354f04a7fcaf8c7d4854af/shocked-cat.jpg?fm=jpg&fl=progressive&w=660&h=433&fit=fill" class="gallery-photo" alt="Photo 7" />
-    <img src="https://cdn.theatlantic.com/thumbor/yHhIvkBiGvKKubxVHTNXvU4nCKQ=/1x122:2554x1452/1200x625/media/img/mt/2017/06/shutterstock_319985324/original.jpg" class="gallery-photo" alt="Photo 8" />
-    <img src="https://www.wayofcats.com/blog/wp-content/uploads/2011/02/britishbluecat-lawngrass-yellowball-logo-wayofcats-862x862.jpg" class="gallery-photo" alt="Photo 9" />
-    <img src="https://www.vets4pets.com/contentassets/eb5e17755de843c99b88a684482b92fe/your-cats-first-season.jpg" class="gallery-photo" alt="Photo 10" />
-  </div>
+<div class="banner-gallery">
+  <img src="https://www.hamiltonhumane.com/wp-content/uploads/2025/05/Joe-2025.jpg" class="gallery-photo active" alt="Photo 1" />
+  <img src="https://vetmed.tamu.edu/news/wp-content/uploads/sites/9/2023/10/AdobeStock_542062433-1024x768.jpeg" class="gallery-photo" alt="Photo 2" />
+  <img src="https://images.theconversation.com/files/651621/original/file-20250226-32-jxjhmy.jpg?ixlib=rb-4.1.0&rect=0%2C0%2C5991%2C3997&q=20&auto=format&w=320&fit=clip&dpr=2&usm=12&cs=strip" class="gallery-photo" alt="Photo 3" />
+  <img src="https://www.aaha.org/wp-content/uploads/2024/09/kitten-lying-in-blanket.jpg" class="gallery-photo" alt="Photo 4" />
+  <img src="https://wpcdn.web.wsu.edu/news/uploads/sites/2797/2025/03/cat2-1024x676.jpg" class="gallery-photo" alt="Photo 5" />
+  <img src="https://ontariospca.ca/wp-content/uploads/2023/02/IMG_3694-scaled-e1747141434405.jpg" class="gallery-photo" alt="Photo 6" />
+  <img src="https://images.ctfassets.net/cnu0m8re1exe/7mDmSG83GU3f3aDETac5Fo/db0bed89e9354f04a7fcaf8c7d4854af/shocked-cat.jpg?fm=jpg&fl=progressive&w=660&h=433&fit=fill" class="gallery-photo" alt="Photo 7" />
+  <img src="https://cdn.theatlantic.com/thumbor/yHhIvkBiGvKKubxVHTNXvU4nCKQ=/1x122:2554x1452/1200x625/media/img/mt/2017/06/shutterstock_319985324/original.jpg" class="gallery-photo" alt="Photo 8" />
+  <img src="https://www.wayofcats.com/blog/wp-content/uploads/2011/02/britishbluecat-lawngrass-yellowball-logo-wayofcats-862x862.jpg" class="gallery-photo" alt="Photo 9" />
+  <img src="https://www.vets4pets.com/contentassets/eb5e17755de843c99b88a684482b92fe/your-cats-first-season.jpg" class="gallery-photo" alt="Photo 10" />
+</div>
 
-  <!-- ✅ Slideshow Script wrapped in DOMContentLoaded -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const photos = document.querySelectorAll('.gallery-photo');
-      let currentIndex = 0;
+<!-- ✅ Slideshow Script wrapped in DOMContentLoaded -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const photos = document.querySelectorAll('.gallery-photo');
+    let currentIndex = 0;
 
-      if (photos.length > 0) {
-        setInterval(() => {
-          photos[currentIndex].classList.remove('active');
-          currentIndex = (currentIndex + 1) % photos.length;
-          photos[currentIndex].classList.add('active');
-        }, 5000); // Change every 5 seconds
+    if (photos.length > 0) {
+      setInterval(() => {
+        photos[currentIndex].classList.remove('active');
+        currentIndex = (currentIndex + 1) % photos.length;
+        photos[currentIndex].classList.add('active');
+      }, 5000); // Change every 5 seconds
       }
     });
   </script>
-
-<!-- Firebase Firestore -->
-<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js"></script>
-
 
 </body>
 </html>

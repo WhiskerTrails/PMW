@@ -2,16 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="description" content="Pet loss grief support community with a memorial photo gallery, links to emergency, and support services" />
+  <meta name="description" content="Pet loss grief support community with memorial photo gallery, links to emergency, support services" />
   <title id="tabtitle">Whisker Trails</title>
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
- <header>
-    <nav class="rainbow-bridge-nav">
-    <ul class="nav-links">
+<header>
+  <nav class="rainbow-bridge-nav">
+  <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="articles.html">Articles</a></li>
     <li><a href="gallery.html">Gallery</a></li>
@@ -20,17 +20,15 @@
     <li><a href="contact.html">Contact</a></li>
   </ul>
   </nav>
-  </header>
+</header>
 
-  <h1 id="welcome" style="text-align: center;">Welcome to Whisker Trails</h1>
-  <p>A pet support network</p>
+<div class="welcome-box">
+  <h1 id="welcome">Welcome to Whisker Trails</h1>
+  <p class="subtitle">A grief support network for pet loss</p>
+  <p>We are a compassionate community dedicated to supporting those who have experienced the heartbreak of losing a beloved pet. Here, you can share memories by uploading photos and heartfelt stories to our memorial gallery, honoring the special place your pet holds in your heart. Connect and discuss with others who are going through their own pet loss on our forum. Our resource section offers trusted links to veterinarians, memorial services, and helpful organizations, while our curated articles provide guidance on coping with grief and nurturing mental health. You are not alone on this journey — we’re here to help you find comfort, connection, and healing.</p>
+</div>
 
-  <div class="intro-container">
-    <p>We are a compassionate community dedicated to supporting those who have experienced the heartbreak of losing a beloved pet. Here, you can share memories by uploading photos and heartfelt stories to our memorial gallery, honoring the special place your pet holds in your heart. Our resource section offers trusted links to veterinarians, memorial services, and helpful organizations, while our curated articles provide guidance on coping with grief and nurturing mental health. You are not alone on this journey — we’re here to help you find comfort, connection, and healing.
-    </p>
-  </div>
-
-  <div style="text-align: center;">
+<div style="text-align: center;">
   <iframe 
     width="560" 
     height="315" 
@@ -38,39 +36,11 @@
     title="YouTube video player" 
     frameborder="0" 
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
+    referrerpolicy="strict-origin-when-cross-origin"
+    allowfullscreen
   ></iframe>
-  </div>
+</div>
 
-    <section>
-    <h2 id="submission">Add your pet to the gallery</h2>
-    <form id="petForm">
-  <label for="petName">Pet Name:</label>
-  <input type="text" id="petName" name="petName" required />
-
-  <label for="ownerEmail">Your Email:</label>
-  <input type="email" id="ownerEmail" name="ownerEmail" required />
-
-  <label for="petPhoto">Pet Photo:</label>
-  <!-- Uploadcare widget input -->
-  <input 
-    type="hidden" 
-    role="uploadcare-uploader" 
-    name="petPhoto" 
-    data-public-key="78080d5029a887819c67" 
-    data-images-only 
-    required 
-  />
-
-  <label for="message">Memory / Tribute:</label>
-  <textarea id="message" name="message" required></textarea>
-
-  <button type="submit">Submit</button>
-  <p id="submissionMessage"></p>
-  </form>
-  </section>
-
-  <script src="https://ucarecdn.com/libs/widget/3.x/uploadcare.full.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

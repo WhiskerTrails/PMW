@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Discussion - Pet Memorial Network</title>
+  <title>Discussion</title>
   <link rel="stylesheet" href="style.css" />
   
   <!-- Firebase SDKs -->
@@ -13,15 +12,15 @@
   <!-- Uploadcare widget -->
   <script src="https://ucarecdn.com/libs/widget/3.x/uploadcare.full.min.js"></script>
 
-<script>
-UPLOADCARE_PUBLIC_KEY = '78080d5029a887819c67';
-</script>
+  <script>
+    UPLOADCARE_PUBLIC_KEY = '78080d5029a887819c67';
+  </script>
 
 </head>
 <body>
 
-   <header>
-    <nav class="rainbow-bridge-nav">
+<header>
+  <nav class="rainbow-bridge-nav">
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="articles.html">Articles</a></li>
@@ -31,36 +30,11 @@ UPLOADCARE_PUBLIC_KEY = '78080d5029a887819c67';
     <li><a href="contact.html">Contact</a></li>
   </ul>
   </nav>
-  </header>
+</header>
 
-  <main>
-    <section class="discussion-section">
-      <h2>Share Your Story</h2>
-
-      <!-- Photo Submission Form -->
-      <form id="upload-form">
-        <label for="photo">Upload a Photo of Your Pet:</label><br/>
-        <input
-          type="hidden"
-          role="uploadcare-uploader"
-          name="photo"
-          data-crop="1:1"
-          data-images-only
-          data-clearable
-        />
-        <br/><br/>
-        <button type="submit">Submit Photo</button>
-      </form>
-
-      <!-- Optional: Comment Box -->
-      <div id="comment-section">
-        <h3>Leave a Comment</h3>
-        <textarea id="comment-input" placeholder="Type your message here..."></textarea><br/>
-        <button id="submit-comment">Post Comment</button>
-        <ul id="comments-list"></ul>
-      </div>
-    </section>
-  </main>
+<div class="welcome-box">
+  <h1>COMING SOON</h1>
+</div>
 
   <script src="script.js"></script>
 </body>
