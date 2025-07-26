@@ -306,13 +306,4 @@ form button:hover {
   font-style: italic;
 }
 
-@media (max-width: 768px) {
-  /* Make nav clean on mobile */
-  nav ul {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-  }
+@media (max-width: 768px)
