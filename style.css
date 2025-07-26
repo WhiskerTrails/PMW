@@ -307,5 +307,64 @@ form button:hover {
 }
 
 @media (max-width: 768px) {
-  /* Styles for mobile devices go here */
+
+  /* Shrink content width */
+  .welcome-box,
+  .info-box {
+    max-width: 90%;
+    padding: 20px;
+    font-size: 1em;
+  }
+
+  /* Center and stack nav links */
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+  }
+
+  nav li {
+    margin: 10px 0;
+  }
+
+  nav a {
+    font-size: 1.1em;
+    padding: 10px;
+  }
+
+  /* Tweak headers */
+  h1 {
+    font-size: 1.8em;
+  }
+
+  p {
+    font-size: 1em;
+    line-height: 1.5;
+  }
+
+  /* Form adjustments */
+  form#photoForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  #photoInput,
+  #photoDescription,
+  button[type="submit"] {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 10px;
+  }
+
+  /* Responsive YouTube embed */
+  iframe {
+    width: 90%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
 }
+
