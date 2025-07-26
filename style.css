@@ -305,3 +305,7 @@ form button:hover {
   color: #444;
   font-style: italic;
 }
+
+@media (max-width: 768px) {
+  /* Styles for mobile devices go here */
+}
